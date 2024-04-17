@@ -1,0 +1,207 @@
+A]  1) echo "Hello, World!" :- echo command is used for print and it display Hello,World
+    
+    2) name="Productive"    :- 
+   
+    3) touch file.txt       :- create empty file
+   
+    4)  ls -a               :- ls It shows list of directory content and -a shows hidden files
+      
+    5)  rm file.txt         :- rm Command is used to delete files or directory
+
+    6) cp file1.txt file2.txt :- cp is used to copy the content of file1 to file2
+
+    7) mv file.txt /path/to/directory/ :- mv is use to move file to a given path
+
+    8) chmod 755 script.sh       :- chmod is change mode it use to change file permissions (Owner-read,write,execute , Group and other user- read,execute)
+ 
+    9) grep "pattern" file.txt   :- gerp command is use to search word in output
+
+    10) kill PID                 :- kill is use to terminate of process by process ID
+
+    11) mkdir mydir              :- This creates a directory of mydir
+          && 
+        cd mydir                 :- This change the current directory to mydir
+          && 
+        touch file.txt           :- This create a new file name file.txt in mydir directory
+          && 
+        echo "Hello, World!"> file.txt     :- this write  the text "Hello World!" into file.txt . The > operator redirecting the echo command into file.txt
+          &&  
+       cat file.txt              :- This prints the content of file.txt
+
+
+    12) ls -l | grep ".txt"      :- ls - list directory content 
+                                     | - this symbol is called pipe. It is used to pass the output command as input to another command
+                                    grep - this command search string in output (it search ".txt" content)
+     
+    13) cat file1.txt file2.txt | sort | uniq :- 
+      
+    14) ls -l | grep "^d"
+     
+    15) grep -r "pattern" /path/to/directory/
+      
+    16) cat file1.txt file2.txt | sort | uniq –d
+     
+    17) chmod 644 file.txt             :- This gives permissions Owner-read,write , Group and Other user -read
+      
+    18) cp -r source_directory destination_directory :- Copy source directory to destination directory
+     
+    19) find /path/to/search -name "*.txt"   :- find the ".txt" file in given path -name 
+     
+    20) chmod u+x file.txt                 :- this gives permission to Owner to execute file.txt
+     
+    21) echo $PATH                         :- 
+
+
+B]  1) Identify True or False:
+                 1. ls is used to list files and directories in a directory. :- True
+                 2. mv is used to move files and directories.                :- True
+                 3. cd is used to copy files and directories.                :- False
+                 4. pwd stands for "print working directory" and displays the current directory. :- True
+                 5. grep is used to search for patterns in files.                                :- True
+                 6. chmod 755 file.txt gives read, write, and execute permissions to the owner, and read and execute :- True
+                    permissions to group and others.
+                 7. mkdir -p directory1/directory2 creates nested directories, creating directory2 inside directory1  :- 
+                    if directory1 does not exist.
+                 8. rm -rf file.txt deletes a file forcefully without confirmation.   :- True
+
+   2) Identify the Incorrect Commands:
+           1. chmodx is used to change file permissions. :- Incorrect   correct -chmod
+           2. cpy is used to copy files and directories. :- Incorrect            cp
+           3. mkfile is used to create a new file.       :- Incorrect            touch
+           4. catx is used to concatenate files.         :- Incorrect            cat 
+           5. rn is used to rename files.                :- Incorrect            mv 
+
+C]
+
+    Question 1: Write a shell script that prints "Hello, World!" to the terminal
+            
+                       #!/bin/bash
+
+                       echo "Hello, World!"
+
+   Question 2: Declare a variable named "name" and assign the value "CDAC Mumbai" to it. Print the
+              value of the variable.
+                   
+                       #!/bin/bash
+
+                       Name="CDAC Mumbai"
+                       echo $Name
+  
+   Question 3: Write a shell script that takes a number as input from the user and prints it.
+
+                       #!/bin/bash
+                       echo "Enter a number"
+                       read number
+                       echo "number you enter is: $number"
+
+
+   Question 4: Write a shell script that performs addition of two numbers (e.g., 5 and 3) and prints the
+               result.
+                            #!/bin/bash
+                            echo " Enter num1 : "
+                            read num1
+                            echo " Enter num2 : "
+                            read num2
+                            (( Sum=$num1 + $num2 ))
+                            echo " Sum of Two Num : $Sum "
+
+
+   Question 5: Write a shell script that takes a number as input and prints "Even" if it is even, otherwise
+               prints "Odd".
+                            #!/bin/bash
+                            echo " Enter a Num "
+                            read Num
+                            if [[ $((Num%2)) -eq 0 ]]
+                            then
+                               echo " $Num is Even Num "
+                            else
+                               echo " $Num is Odd Num "
+                            fi      
+
+
+   Question 6: Write a shell script that uses a for loop to print numbers from 1 to 5.
+                              
+                           #!/bin/bash
+                           for (( i=1; i<=5; i++ ))
+                           do
+	                       echo $i;
+                           done
+
+
+   Question 7: Write a shell script that uses a while loop to print numbers from 1 to 5.
+
+                          #!/bin/bash
+                          x=1
+                          while [[ $x -le 5 ]]
+                          do
+                         	echo $x
+	                        let x+=1
+                          done 
+
+
+   Question 8: Write a shell script that checks if a file named "file.txt" exists in the current directory. If it
+               does, print "File exists", otherwise, print "File does not exist".
+
+                           #!/bin/bash
+                           echo " Enter file name "
+                           read filename
+                           if [ -e $filename ]
+                           then
+                               echo " file exists "
+                           else
+                               echo " file not exists "
+                           fi  
+
+  Question 9: Write a shell script that uses the if statement to check if a number is greater than 10 and
+              prints a message accordingly.
+
+                           #!/bin/bash
+                           echo " Enter a Num "
+                           read Num
+                           if [[ $Num -gt 10 ]]
+                           then
+	                       echo " The Num is Greater : $Num "
+                           else
+	                       echo " The Num is Less : $Num "
+                           fi
+
+  Question 10: Write a shell script that uses nested for loops to print a multiplication table for numbers
+               from 1 to 5. The output should be formatted nicely, with each row representing a number and each
+               column representing the multiplication result for that number.
+
+                           #!/bin/bash
+                           echo "Enter The Number To Print Table"
+                           for i in 1 2 3 4 5
+                           do
+                        	for (( n=1 ; n <= 10 ; n++ )) 
+                                     do
+
+                                  	((Result=$n*$i))
+                                        echo "$i x $n = $Result"
+
+                                     done
+                                                echo "__________________"
+                            done
+
+
+  Question 11: Write a shell script that uses a while loop to read numbers from the user until the user enters
+               a negative number. For each positive number entered, print its square. Use the break statement to exit the
+               loop when a negative number is entered.
+
+                           #!/bin/bash
+                           echo " Enter Negetive Number to Exist "
+                           while :
+                           do
+	                        echo " Enter Positive Number for SquareRoot "
+                                read Num	
+	                        if [[ $Num -lt 0 ]]
+	                        then
+		                        break
+	                         else    
+		                      (( s=$Num+$Num ))
+		                      echo " Square of $Num = $s"
+	                        fi
+                            done 
+
+
+
